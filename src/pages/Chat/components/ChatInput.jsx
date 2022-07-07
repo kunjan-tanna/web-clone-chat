@@ -1,6 +1,7 @@
 import React from "react";
 import Icon from "components/Icon";
-
+import "emoji-mart/css/emoji-mart.css";
+import { Picker } from "emoji-mart";
 const attachButtons = [
    { icon: "attachRooms", label: "Choose room" },
    { icon: "attachContacts", label: "Choose contact" },
@@ -27,6 +28,11 @@ const ChatInput = ({
    const userClickedInput = () => {
       messageRefFn();
    };
+   console.log("NEW", newMessage);
+   const onEmojiClick = (event, emojiObject) => {
+      console.log("EMOJJ", emojiObject);
+      setNewMessage(newMessage + emojiObject);
+   };
    return (
       <div className="chat__input-wrapper">
          {showEmojis && (
@@ -37,6 +43,7 @@ const ChatInput = ({
                <Icon id="cancel" className="chat__input-icon" />
             </button>
          )}
+
          <button aria-label="Emojis" onClick={() => setShowEmojis(true)}>
             <Icon
                id="smiley"
@@ -45,7 +52,7 @@ const ChatInput = ({
                }`}
             />
          </button>
-         {showEmojis && (
+         {/* {showEmojis && (
             <>
                <button aria-label="Choose GIF">
                   <Icon id="gif" className="chat__input-icon" />
@@ -54,8 +61,8 @@ const ChatInput = ({
                   <Icon id="sticker" className="chat__input-icon" />
                </button>
             </>
-         )}
-         <div className="pos-rel">
+         )} */}
+         {/* <div className="pos-rel">
             <button
                aria-label="Attach"
                onClick={() => setShowAttach(!showAttach)}
@@ -83,7 +90,7 @@ const ChatInput = ({
                   </button>
                ))}
             </div>
-         </div>
+         </div> */}
          <input
             className="chat__input"
             placeholder="Type a message"

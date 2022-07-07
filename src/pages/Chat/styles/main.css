@@ -3,9 +3,8 @@
    display: flex;
    height: calc(103vh - 10px);
    overflow: auto;
-   padding: 5px;
-   margin-left: 314px;
-   padding-left: 7%;
+   padding: 5px 72px 9px 50px;
+   margin-left: 360px;
    box-sizing: border-box;
    overflow-y: scroll;
    top: 0;
@@ -350,6 +349,12 @@
    height: 40vh;
    min-height: 350px;
    transition: all 0.4s ease;
+}
+.emoji-mart-dark {
+   color: #fff;
+   border: none !important;
+   background-color: transparent !important;
+   min-width: 100%;
 }
 
 .emojis__tabs {
